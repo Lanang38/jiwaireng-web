@@ -26,17 +26,21 @@ export const Home = () => {
         <Layout>
             <div>
                 <div className='flex items-center justify-end'>
-                    <button type='button' onClick={toggleMenu} className='px-6 py-4 mr-4 bg-primary-600 rounded-full text-white font-bold text-3xl hover:bg-primary-800'>
-                        +
-                    </button>
+                <button
+                    type="button"
+                    onClick={toggleMenu}
+                    className="flex items-center justify-center w-20 h-20 mr-4 bg-primary-600 rounded-full text-white font-bold text-3xl hover:bg-primary-800"
+                >
+                    +
+                </button>
                     <img
                         src={profileImg}
                         alt="Profile"
                         onClick={() => navigate('/profile')}
-                        className="w-20 h-20 rounded-full border border-gray-300 mr-4 object-cover hover:shadow-lg"
+                        className="w-24 h-24 rounded-full border border-gray-300 mr-4 object-cover hover:shadow-lg"
                     />
                     {isOpen && (
-                        <div className="absolute right-36 top-16 bg-primary-500 border border-gray-300 rounded-lg shadow-lg p-4 z-10">
+                        <div className="absolute right-48 top-20 bg-primary-500 border border-gray-300 rounded-lg shadow-lg p-4 z-10">
                         <ul className="flex flex-col gap-2">
                         <li>
                             <button onClick={() => openForm('Tambah Kelas')} className="px-4 py-2 text-primary-50 font-semibold hover:bg-gray-100 hover:text-black rounded-md w-full text-left">
