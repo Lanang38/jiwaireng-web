@@ -1,9 +1,12 @@
 import { Layout } from '../layout/layout';
 import { useState } from 'react';
+import profileImg from '../assets/zee.webp';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [formType, setFormType] = useState(null);
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -23,11 +26,17 @@ export const Home = () => {
         <Layout>
             <div>
                 <div className='flex items-center justify-end'>
-                    <button type='button' onClick={toggleMenu} className='px-6 py-4 bg-primary-600 rounded-full text-white font-bold text-3xl hover:bg-primary-800'>
+                    <button type='button' onClick={toggleMenu} className='px-6 py-4 mr-4 bg-primary-600 rounded-full text-white font-bold text-3xl hover:bg-primary-800'>
                         +
                     </button>
+                    <img
+                        src={profileImg}
+                        alt="Profile"
+                        onClick={() => navigate('/profile')}
+                        className="w-20 h-20 rounded-full border border-gray-300 mr-4 object-cover hover:shadow-lg"
+                    />
                     {isOpen && (
-                        <div className="absolute right-16 top-16 bg-primary-500 border border-gray-300 rounded-lg shadow-lg p-4 z-10">
+                        <div className="absolute right-36 top-16 bg-primary-500 border border-gray-300 rounded-lg shadow-lg p-4 z-10">
                         <ul className="flex flex-col gap-2">
                         <li>
                             <button onClick={() => openForm('Tambah Kelas')} className="px-4 py-2 text-primary-50 font-semibold hover:bg-gray-100 hover:text-black rounded-md w-full text-left">
@@ -109,49 +118,49 @@ export const Home = () => {
                 <h1 className="text-3xl font-semibold mb-6 text-primary-500">Daftar Kelas</h1>
                 <div className="p-6 flex flex-row justify-start">
                     {/* Card 1 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>
                     </a>
 
                     {/* Card 2 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>
                     </a>
 
                     {/* Card 3 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>
                     </a>
 
                     {/* Card 4 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
                         <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
@@ -167,52 +176,52 @@ export const Home = () => {
                 <h1 className="text-3xl font-semibold mb-6 text-primary-500">Daftar Tugas</h1>
                 <div className="p-6 flex flex-row justify-start">
                     {/* Card 1 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>
                     </a>
 
                     {/* Card 2 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>
                     </a>
 
                     {/* Card 3 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>
                     </a>
 
                     {/* Card 4 */}
-                    <a class="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
-                    <img class="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
-                    <div class="p-3 md:p-4">
-                        <h3 class="text-base font-semibold text-gray-800 dark:text-white">
+                    <a className="flex flex-col bg-white border shadow-sm rounded-xl mr-8 hover:shadow-lg focus:outline-none focus:shadow-lg transition dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70 w-96" href="#">
+                    <img className="w-full h-64 rounded-t-xl object-cover" src="https://images.unsplash.com/photo-1680868543815-b8666dba60f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&q=80" alt="Card Image" />
+                    <div className="p-3 md:p-4">
+                        <h3 className="text-base font-semibold text-gray-800 dark:text-white">
                         Card title
                         </h3>
-                        <p class="mt-1 text-sm text-gray-500 dark:text-neutral-400">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
                         Some quick example text to build on the card title and make up the bulk of the card's content.
                         </p>
                     </div>

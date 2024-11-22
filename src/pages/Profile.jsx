@@ -3,8 +3,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import profileImage from "../assets/zee.webp";
 
-export const Setting = () => {
-  const [profile, setProfile] = useState("");
+export const Profile = () => {
   const [fullName, setFullName] = useState("Azizi Asadel");
   const [handphone, setHandphone] = useState("0887665212");
   const [email, setEmail] = useState("AziziAsadel@gmail.com");
@@ -36,7 +35,7 @@ export const Setting = () => {
   return (
     <Layout>
       <div>
-        <div className="p-8 max-w-2xl mx-auto min-h-screen">
+        <div className="p-8 max-w-2xl mx-auto">
           {/* Profile Information Card */}
           <div className="bg-white shadow-lg rounded-lg p-6 mb-8">
             <div className="flex items-center mb-6">
